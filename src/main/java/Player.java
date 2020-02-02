@@ -1,4 +1,3 @@
-package src.main.java;
 public class Player extends Character implements GameActions {
 	public Player(int row, int col) {
 		super(row, col);

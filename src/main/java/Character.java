@@ -1,4 +1,3 @@
-package src.main.java;
 public abstract class Character {
 	protected int mRow;
 	protected int mCol;
