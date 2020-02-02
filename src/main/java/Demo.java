@@ -1,3 +1,5 @@
+package src.main.java;
+
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -29,19 +31,18 @@ public class Demo {
 			System.err.println("Player has died.");
 	}
 	
-	public static int validateInput(Scanner consoleScanner, String message, int min, int max, String errorMessage) {
+	public static int validateInput(String in, String message, int min, int max, String errorMessage) {
 		int input = 0;
 		boolean inputError;
 		do {
 			try {
 				inputError = false;
 				System.out.print(message + " ");
-				input = consoleScanner.nextInt();
+				input = Integer.parseInt(in);
 				if (input < min || input > max)
 					inputError = true;
 			} catch (InputMismatchException e) {
 				inputError = true;
-				consoleScanner.next();
 			}
 			if (inputError)
 				System.err.println(errorMessage + "\n");
