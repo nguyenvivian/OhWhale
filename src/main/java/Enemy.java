@@ -25,6 +25,6 @@ public class Enemy extends Character implements GameActions {
 	}
 	
 	public String toString() {
-		return "E";
+		return "⬛";
 	}
 }
