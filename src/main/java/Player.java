@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-package src.main.java;
 
 import java.util.Scanner;
 
-=======
->>>>>>> 14bd29e848dfc44fdebe5aadaf8227a861fd72fa
 public class Player extends Character implements GameActions {
 	public Player(int row, int col) {
 		super(row, col);
