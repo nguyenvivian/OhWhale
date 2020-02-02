@@ -1,4 +1,3 @@
-package src.main.java;
 import java.util.Random;
 
 public class Enemy extends Character implements GameActions {
