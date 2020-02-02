@@ -8,6 +8,6 @@ public class Weapon extends Character implements GameActions {
 	void move(Board board) {}
 	
 	public String toString() {
-		return "+";
+		return "🧽";
 	}
 }

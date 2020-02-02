@@ -137,8 +137,8 @@ public class Board {
 		}
 	}
 	
-	public void moveAllCharacters() {
-		mPlayer.move(this);
+	public void moveAllCharacters(String input) {
+		mPlayer.move(this, input);
 		
 		List<Enemy> enemyRemoval = new ArrayList<>();
 		List<Weapon> weaponRemoval = new ArrayList<>();
@@ -193,16 +193,16 @@ public class Board {
 					if (rodentCount == 1)
 						board.append(tempEnemy.toString());
 					else
-						board.append(rodentCount);
+						board.append("⬛");
 				}
 				else
-					board.append(".");
+					board.append("🌊");
 			}
 
 			board.append("\n");
 		}
 
-		board.append("\n").append(mEnemyList.size()).append(" enemies left to eliminate.\n");
+		board.append("\n").append(mEnemyList.size()).append(" oil spills left to clean up.\n");
 		return board.toString();
 	}
 }
