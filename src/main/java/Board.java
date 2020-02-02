@@ -22,11 +22,13 @@ public class Board {
 		for (int i = 0; i < numEnemy; ++i) {
 			if (col < mColSize) {
 				mEnemyList.add(new Enemy(row, col));
+				++col;
 			}
 			else {
 				++row;
 				col = 0;
 				mEnemyList.add(new Enemy(row, col));
+				++col;
 			}
 		}
 	}
@@ -164,9 +166,41 @@ public class Board {
 	
 	public String toString() {
 		StringBuilder board = new StringBuilder();
-		
-		// TODO: build string representation of current board
-		
+
+		for (int row = 0; row < mRowSize; ++row)
+		{
+			for (int col = 0; col < mColSize; ++col)
+			{
+				Weapon tempWeapon = new Weapon(row, col);
+				Enemy tempEnemy = new Enemy(row, col);
+
+				if (mPlayer != null && mPlayer.mCol == col && mPlayer.mRow == row)
+					board.append(mPlayer.toString());
+				else if (mWeaponList.contains(tempWeapon))
+					board.append(tempWeapon.toString());
+				else if (mEnemyList.contains(tempEnemy))
+				{
+					int rodentCount = 0;
+
+					for (Enemy e : mEnemyList)
+					{
+						if (tempEnemy.mCol == e.mCol && tempEnemy.mRow == e.mRow)
+							++rodentCount;
+					}
+
+					if (rodentCount == 1)
+						board.append(tempEnemy.toString());
+					else
+						board.append(rodentCount);
+				}
+				else
+					board.append(".");
+			}
+
+			board.append("\n");
+		}
+
+		board.append("\n").append(mEnemyList.size()).append(" enemies left to eliminate.\n");
 		return board.toString();
 	}
 }
