@@ -1,4 +1,4 @@
-# OhWhale
+# OH!whale
 
 Our submission for HackUCI 2020!
 
